@@ -107,6 +107,7 @@ Hello! My name is Ashish Pratap Singh Chauhan. I am learning web development.
     <button onclick="showPhotos('bhavna')">Bhavna</button>
     <button onclick="showPhotos('shraddha')">Shraddha</button>
     <button onclick="showPhotos('sona')">Sona</button>
+    <button onclick="showPhotos('akch')">Akch</button>
 
     <div id="ashish" class="photo-group">
         <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG_20250910_213834_093.webp?raw=true">
@@ -146,6 +147,7 @@ function toggleGallery(){
         document.getElementById("bhavna").style.display = "none";
         document.getElementById("shraddha").style.display = "none";
         document.getElementById("sona").style.display = "none";
+        document.getElementById("akch").style.display = "none";
     }
 }
 
@@ -155,6 +157,7 @@ function showPhotos(person){
     document.getElementById("bhavna").style.display = "none";
     document.getElementById("shraddha").style.display = "none";
     document.getElementById("sona").style.display = "none";
+    document.getElementById("akch").style.display = "none";
 
     document.getElementById(person).style.display = "block";
 }
