@@ -99,17 +99,17 @@ Hello! My name is Ashish Pratap Singh Chauhan. I am learning web development.
 
 <h2>Gallery</h2>
 
-<button onclick="toggleGallery()">Show Photos</button>
+<button id="toggleBtn" onclick="toggleGallery()">Show Photos</button>
 
 <div id="gallery">
 
-    <button onclick="showPhotos('ashish thakur')">Ashish Thakur</button>
-    <button onclick="showPhotos('bhavna thakur')">Bhavna Thakur</button>
-    <button onclick="showPhotos('shraddha thakur')">Shraddha Thakur</button>
-    <button onclick="showPhotos('sona thakur')">Sona Thakur</button>
-    <button onclick="showPhotos('akch thakur')">Akch Thakur</button>
+    <button onclick="showPhotos('ashish')">Ashish Thakur</button>
+    <button onclick="showPhotos('bhavna')">Bhavna Thakur</button>
+    <button onclick="showPhotos('shraddha')">Shraddha Thakur</button>
+    <button onclick="showPhotos('sona')">Sona Thakur</button>
+    <button onclick="showPhotos('akch')">Akch Thakur</button>
 
-    <div id="ashish thakyr" class="photo-group">
+    <div id="ashish" class="photo-group">
         <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG_20250910_213834_093.webp?raw=true">
         <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG_20251128_194029_641_copy_2534x3675.jpg?raw=true">
     </div>
@@ -120,15 +120,14 @@ Hello! My name is Ashish Pratap Singh Chauhan. I am learning web development.
     </div>
 
     <div id="shraddha" class="photo-group">
-        <img src="">
-        <img src="">
+        <!-- Add images later -->
     </div>
 
     <div id="sona" class="photo-group">
         <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG_20260509_125640_781.jpg?raw=true">
     </div>
 
-     <div id="akch" class="photo-group">
+    <div id="akch" class="photo-group">
         <img src="https://github.com/Ashish1231287680/my-website/blob/main/Bbabu.jpg?raw=true">
         <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20250907-WA0014.jpg?raw=true">
     </div>
@@ -139,7 +138,7 @@ Hello! My name is Ashish Pratap Singh Chauhan. I am learning web development.
 
 function toggleGallery(){
     let gallery = document.getElementById("gallery");
-    let button = document.querySelector("body > button");
+    let button = document.getElementById("toggleBtn");
 
     if (gallery.style.display === "none" || gallery.style.display === ""){
         gallery.style.display = "block";
@@ -148,21 +147,21 @@ function toggleGallery(){
         gallery.style.display = "none";
         button.innerText = "Show Photos";
 
-        document.getElementById("ashish thakur").style.display = "none";
-        document.getElementById("bhavna thakur").style.display = "none";
-        document.getElementById("shraddha thakur").style.display = "none";
-        document.getElementById("sona thakur").style.display = "none";
-        document.getElementById("akch thakur").style.display = "none";
+        document.getElementById("ashish").style.display = "none";
+        document.getElementById("bhavna").style.display = "none";
+        document.getElementById("shraddha").style.display = "none";
+        document.getElementById("sona").style.display = "none";
+        document.getElementById("akch").style.display = "none";
     }
 }
 
 function showPhotos(person){
 
-    document.getElementById("ashish thakur").style.display = "none";
-    document.getElementById("bhavna thakur").style.display = "none";
-    document.getElementById("shraddha thakur").style.display = "none";
-    document.getElementById("sona thakur").style.display = "none";
-    document.getElementById("akch thakur").style.display = "none";
+    document.getElementById("ashish").style.display = "none";
+    document.getElementById("bhavna").style.display = "none";
+    document.getElementById("shraddha").style.display = "none";
+    document.getElementById("sona").style.display = "none";
+    document.getElementById("akch").style.display = "none";
 
     document.getElementById(person).style.display = "block";
 }
