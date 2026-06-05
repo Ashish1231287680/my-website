@@ -1,182 +1,374 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Ashish Creations</title>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>ASHISH CREATIONS</title>
+
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background: linear-gradient(to bottom, #1B1208, #2B1D0E);
-    color: #F5EBD3;
+background:linear-gradient(-45deg,#0f172a,#1e293b,#4f46e5,#7c3aed);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+min-height:100vh;
+overflow-x:hidden;
 }
 
-h1{
-    color: #D4AF37;
-    text-align: center;
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-h2{
-    color: #D4AF37;
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
 }
 
-button{
-    background-color: #D4AF37;
-    color: #111;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin: 5px;
+.glass{
+width:90%;
+max-width:800px;
+padding:50px;
+text-align:center;
+
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.2);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+color:white;
+box-shadow:0 0 40px rgba(255,255,255,.1);
 }
 
-button:hover{
-    background-color: #E6C65C;
+.glass h1{
+font-size:3rem;
+margin-bottom:20px;
 }
 
-#gallery{
-    display: none;
+.glass p{
+color:#ddd;
+line-height:1.7;
+margin-bottom:25px;
 }
 
-#gallery img{
-    max-width: 100%;
-    width: 200px;
-    margin: 5px;
-    border-radius: 10px;
-    border: 2px solid #D4AF37;
+.btn{
+padding:15px 35px;
+border:none;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
+
+background:white;
+color:#4f46e5;
+font-weight:bold;
+
+transition:.3s;
 }
 
-.photo-group{
-    display: none;
-    margin-top: 15px;
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px white;
 }
 
-hr{
-    border: 1px solid #D4AF37;
+.gallery-dashboard{
+display:none;
+padding:80px 20px;
 }
 
-@media (max-width: 600px){
-    h1{
-        font-size: 24px;
-    }
-
-    p, li{
-        font-size: 18px;
-    }
-
-    #gallery img{
-        width: 100%;
-    }
+.gallery-dashboard h2{
+text-align:center;
+color:white;
+font-size:2.5rem;
+margin-bottom:40px;
 }
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.2);
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+padding:40px 20px;
+
+text-align:center;
+color:white;
+
+cursor:pointer;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(255,255,255,.2);
+}
+
+.card h3{
+font-size:1.4rem;
+}
+
+.gallery-img{
+width:100%;
+max-width:300px;
+height:220px;
+object-fit:cover;
+border-radius:20px;
+cursor:pointer;
+margin:auto;
+display:block;
+}
+
+.gallery-img:hover{
+transform:scale(1.05);
+transition:.3s;
+}
+
 </style>
-
 </head>
 
 <body>
 
-<h1>Welcome to My Website</h1>
+<section class="hero" id="home">
 
-<marquee style="font-size:20px; color:#F5EBD3" scrollamount="6">
-Hello! My name is Ashish Pratap Singh Chauhan. I am learning web development.
-</marquee>
+<div class="glass">
 
-<hr>
+<h1>ASHISH CREATIONS</h1>
 
-<h2>About Me</h2>
-<p>I am a student and I love coding.</p>
+<p>
+Welcome to my premium gallery website.
+Modern design, smooth animations and
+professional gallery experience.
+</p>
 
-<h2>My Skills</h2>
+<button class="btn" onclick="openDashboard()">
+Explore Now
+</button>
 
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-</ul>
+</div>
 
-<h2>Gallery</h2>
+</section>
 
-<button id="toggleBtn" onclick="toggleGallery()">Show Photos</button>
+<section class="gallery-dashboard" id="dashboard">
 
-<div id="gallery">
+<h2>Welcome to my Gallery </h2>
 
-    <button onclick="showPhotos('ashish')">Ashish Thakur</button>
-    <button onclick="showPhotos('bhavna')">Bhavna Thakur</button>
-    <button onclick="showPhotos('shraddha')">Shraddha Thakur</button>
-    <button onclick="showPhotos('sona')">Sona Thakur</button>
-    <button onclick="showPhotos('veer pal')">Veer Pal Singh</button>
-    <button onclick="showPhotos('akch')">Akch Thakur</button>
+<div class="cards">
 
-    <div id="ashish" class="photo-group">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG_20250910_213834_093.webp?raw=true">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG_20251128_194029_641_copy_2534x3675.jpg?raw=true">
-    </div>
+<div class="card" onclick="openCategory('ashish')">
+<h3>Ashish</h3>
+</div>
 
-    <div id="bhavna" class="photo-group">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0005.jpg?raw=true">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0004.jpg?raw=true">
-    </div>
+<div class="card" onclick="openCategory('bhavna')">
+<h3>Bhavna</h3>
+</div>
 
-    <div id="shraddha" class="photo-group">
-        
-    </div>
+<div class="card" onclick="openCategory('sona')">
+<h3>Sona</h3>
+</div>
 
-    <div id="sona" class="photo-group">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG_20260509_125640_781.jpg?raw=true">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0016.jpg?raw=true">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0015.jpg?raw=true">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0014.jpg?raw=true">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0013.jpg?raw=true">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0012.jpg?raw=true">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0011.jpg?raw=true">
-    </div>
-    
-    <div id="veer pal" class="photo-group">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0009.jpg?raw=true">
-    </div>
+<div class="card" onclick="openCategory('veerpal')">
+<h3>Mr. Veer Pal Singh Chauhan</h3>
+</div>
 
-    <div id="akch" class="photo-group">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/Bbabu.jpg?raw=true">
-        <img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20250907-WA0014.jpg?raw=true">
-    </div>
+<div class="card" onclick="openCategory('aksh')">
+<h3>Aksh</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- ASHISH -->
+<section id="ashish" class="gallery-dashboard">
+
+<h2>Ashish Gallery</h2>
+
+<button class="btn" onclick="backToDashboard()">Back</button>
+
+<div class="cards">
+
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG_20250910_213834_093.webp?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG_20251128_194029_641_copy_2534x3675.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+
+</div>
+
+</section>
+
+<!-- BHAVNA -->
+<section id="bhavna" class="gallery-dashboard">
+
+<h2>Bhavna Gallery</h2>
+
+<button class="btn" onclick="backToDashboard()">Back</button>
+
+<div class="cards">
+
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0005.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0004.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+
+</div>
+
+</section>
+
+<!-- SONA -->
+<section id="sona" class="gallery-dashboard">
+
+<h2>Sona Gallery</h2>
+
+<button class="btn" onclick="backToDashboard()">Back</button>
+
+<div class="cards">
+
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG_20260509_125640_781.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0016.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0015.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0014.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0013.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0012.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0011.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+
+</div>
+
+</section>
+
+<!-- VEERPAL -->
+<section id="veerpal" class="gallery-dashboard">
+
+<h2>Veer Pal Singh Gallery</h2>
+
+<button class="btn" onclick="backToDashboard()">Back</button>
+
+<div class="cards">
+
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20260601-WA0009.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+
+</div>
+
+</section>
+
+<!-- AKSH -->
+<section id="aksh" class="gallery-dashboard">
+
+<h2>Aksh Gallery</h2>
+
+<button class="btn" onclick="backToDashboard()">Back</button>
+
+<div class="cards">
+
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/Bbabu.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+<img src="https://github.com/Ashish1231287680/my-website/blob/main/IMG-20250907-WA0014.jpg?raw=true" class="gallery-img" onclick="openViewer(this.src)">
+
+</div>
+
+</section>
+
+<!-- IMAGE VIEWER -->
+
+<div id="viewer" onclick="closeViewer()"
+style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+z-index:9999;
+justify-content:center;
+align-items:center;
+padding:20px;
+">
+
+<img id="viewerImg"
+style="
+max-width:95%;
+max-height:95%;
+border-radius:20px;
+">
 
 </div>
 
 <script>
 
-function toggleGallery(){
-    let gallery = document.getElementById("gallery");
-    let button = document.getElementById("toggleBtn");
+function openDashboard(){
 
-    if (gallery.style.display === "none" || gallery.style.display === ""){
-        gallery.style.display = "block";
-        button.innerText = "Hide Photos";
-    } else {
-        gallery.style.display = "none";
-        button.innerText = "Show Photos";
+document.getElementById("home").style.display="none";
 
-        document.getElementById("ashish").style.display = "none";
-        document.getElementById("bhavna").style.display = "none";
-        document.getElementById("shraddha").style.display = "none";
-        document.getElementById("sona").style.display = "none";
-        document.getElementById("veer pal").style.display = "none";
-        document.getElementById("akch").style.display = "none";
-    }
+document.getElementById("dashboard").style.display="block";
+
+document.getElementById("ashish").style.display="none";
+document.getElementById("bhavna").style.display="none";
+document.getElementById("sona").style.display="none";
+document.getElementById("veerpal").style.display="none";
+document.getElementById("aksh").style.display="none";
+
+window.scrollTo(0,0);
+
 }
 
-function showPhotos(person){
+function openCategory(name){
 
-    document.getElementById("ashish").style.display = "none";
-    document.getElementById("bhavna").style.display = "none";
-    document.getElementById("shraddha").style.display = "none";
-    document.getElementById("sona").style.display = "none";
-    document.getElementById("veer pal").style.display = "none";
-    document.getElementById("akch").style.display = "none";
+document.getElementById("dashboard").style.display="none";
 
-    document.getElementById(person).style.display = "block";
+document.getElementById("ashish").style.display="none";
+document.getElementById("bhavna").style.display="none";
+document.getElementById("sona").style.display="none";
+document.getElementById("veerpal").style.display="none";
+document.getElementById("aksh").style.display="none";
+
+document.getElementById(name).style.display="block";
+
+window.scrollTo(0,0);
+
+}
+
+function backToDashboard(){
+
+document.getElementById("dashboard").style.display="block";
+
+document.getElementById("ashish").style.display="none";
+document.getElementById("bhavna").style.display="none";
+document.getElementById("sona").style.display="none";
+document.getElementById("veerpal").style.display="none";
+document.getElementById("aksh").style.display="none";
+
+window.scrollTo(0,0);
+
+}
+
+function openViewer(src){
+
+document.getElementById("viewer").style.display="flex";
+
+document.getElementById("viewerImg").src=src;
+
+}
+
+function closeViewer(){
+
+document.getElementById("viewer").style.display="none";
+
 }
 
 </script>
