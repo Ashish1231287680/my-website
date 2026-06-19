@@ -178,6 +178,241 @@ background:white;
 color:black;
 }
 
+/* ===== PROJECT 1 STYLE ===== */
+
+#project1{
+background:#333333;
+color:white;
+min-height:100vh;
+padding:20px;
+}
+
+#project1 .p1-container{
+max-width:800px;
+margin:auto;
+}
+
+#project1 h1{
+background-color:red;
+font-size:20px;
+text-align:center;
+border:2px solid white;
+border-radius:7px;
+padding:10px;
+margin-bottom:15px;
+}
+
+#project1 img{
+width:100%;
+max-width:500px;
+display:block;
+margin:15px auto;
+border-radius:10px;
+}
+
+#project1 p{
+line-height:1.6;
+margin:10px 0;
+}
+
+#project1 a{
+color:yellow;
+text-decoration:none;
+}
+
+#project1 a:hover{
+text-decoration:underline;
+}
+
+#project1 ol{
+margin-top:15px;
+}
+
+#project1 li{
+margin:5px 0;
+}
+
+@media (max-width:600px){
+#project1 h1{
+font-size:18px;
+}
+}
+
+/* ===== PROJECT 2 ORIGINAL STYLE (SAFE) ===== */
+
+#project2{
+background:#ffffff;
+color:black;
+min-height:100vh;
+padding:20px;
+}
+
+/* container */
+#project2 .p2-container{
+max-width:900px;
+margin:auto;
+}
+
+/* table */
+#project2 table{
+width:100%;
+max-width:900px;
+border-collapse:collapse;
+margin:auto;
+font-size:14px;
+}
+
+#project2 td, #project2 th{
+text-align:center;
+padding:8px;
+border:1px solid #ccc;
+}
+
+#project2 th{
+background:#ddd;
+}
+
+#project2 caption{
+white-space:nowrap;
+text-align:center;
+font-weight:bold;
+padding:10px;
+}
+
+/* scroll */
+#project2 .table-container{
+overflow-x:auto;
+}
+
+/* form */
+#project2 .p2-form{
+text-align:left;
+width:60%;
+margin:30px auto;
+padding:15px;
+border:1px solid #ccc;
+background:#f9f9f9;
+}
+
+#project2 input{
+margin:5px 0;
+padding:5px;
+width:100%;
+box-sizing:border-box;
+}
+
+#project2 button{
+margin-top:10px;
+padding:8px 12px;
+background:black;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+#project2 button:hover{
+background:green;
+}
+
+#project2 fieldset{
+border:2px solid #333;
+}
+
+/* responsive */
+@media (max-width:600px){
+
+#project2 table{
+font-size:12px;
+}
+
+#project2 td, #project2 th{
+padding:5px;
+}
+
+#project2 caption{
+font-size:14px;
+}
+
+#project2 .p2-form{
+width:95%;
+padding:10px;
+}
+
+#project2 button{
+width:100%;
+}
+
+}
+
+/* ===== PROJECT 3 STYLE ===== */
+
+#project3{
+background:#f2f2f2;
+min-height:100vh;
+padding:20px;
+}
+
+#project3 .p3-container{
+text-align:center;
+}
+
+#project3 form{
+background:white;
+padding:20px;
+border-radius:10px;
+width:90%;
+max-width:400px;
+margin:auto;
+box-shadow:0 0 10px gray;
+}
+
+#project3 input, #project3 select{
+width:100%;
+padding:8px;
+margin-top:5px;
+}
+
+#project3 input[type="submit"]{
+background:green;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+#project3 input[type="submit"]:hover{
+background:darkgreen;
+}
+
+#project3 input[type="reset"]{
+background:red;
+color:white;
+border:none;
+cursor:pointer;
+margin-top:10px;
+}
+
+#project3 input[type="reset"]:hover{
+background:darkred;
+}
+
+#project3 #output{
+margin-top:20px;
+background:white;
+padding:10px;
+border-radius:5px;
+box-shadow:0 0 5px gray;
+}
+
+#project3 legend{
+font-weight:bold;
+}
+
+@media(max-width:768px){
+#project3{
+font-size:14px;
+}
+}
+
 </style>
 </head>
 
@@ -185,11 +420,11 @@ color:black;
 
 <nav class="top-navbar">
   <div class="nav-scroll">
-    <a href="#">Home</a>
-    <a href="https://ashish1231287680.github.io/practice-website/" target="_blank">Project 1</a>
-    <a href="https://ashish1231287680.github.io/practice-website2/" target="_blank">Project 2</a>
-    <a href="https://ashish1231287680.github.io/practice-website-3/">Project 3</a> 
-  </div>
+  <a href="#">Home</a>
+  <a href="#" onclick="openProject('project1')">Project 1</a>
+  <a href="#" onclick="openProject('project2')">Project 2</a>
+  <a href="#" onclick="openProject('project3')">Project 3</a> 
+</div>
 </nav>
 
 <section class="hero" id="home">
@@ -326,6 +561,176 @@ Explore Now
 
 </section>
 
+<!-- PROJECT 1 -->
+<section id="project1" class="gallery-dashboard">
+<h2>Project 1</h2>
+<button class="btn" onclick="backToDashboard()">Back</button>
+<div class="p1-container">
+
+<h1>SUPERMAN</h1>
+
+<img src="https://images.unsplash.com/photo-1608889175123-8ee362201f81" alt="SUPERMAN">
+
+<p>His Origin: Born as Kal-El, he was sent to Earth as a baby and raised in Kansas as Clark Kent.</p>
+
+<p>His Powers: He possesses superhuman strength, invulnerability, super speed, and the ability to fly.</p>
+
+<p>His Secret Identity: When not saving the world, he lives as a mild-mannered journalist.</p>
+
+<p>His Weakness: His incredible powers are neutralized by Kryptonite.</p>
+
+<p>
+This is my Website 😎!!
+<a href="file:///C:/Users/Ashish%20Pratap%20Singh/Downloads/MCU%20WALLPAPER/superman-red-5120x2880-19039.jpg" target="_blank">my-website</a>
+</p>
+
+<ol>
+<li>Anju
+  <ul>
+    <li>Shraddha</li>
+    <li>Ashish</li>
+  </ul>
+</li>
+
+<li>Sapna
+  <ul>
+    <li>Bhavna</li>
+    <li>Sona</li>
+  </ul>
+</li>
+</ol>
+
+</div>
+</section>
+
+<!-- PROJECT 2 -->
+<section id="project2" class="gallery-dashboard">
+<h2>Project 2</h2>
+<button class="btn" onclick="backToDashboard()">Back</button>
+<div class="p2-container">
+
+<div class="table-container">
+<table border="1">
+
+<caption>HURDUTT PRASHAD MEMORIAL PUBLIC INTER COLLEGE</caption>
+
+<tr>
+<th colspan="5">Class XII RESULT</th>
+</tr>
+
+<tr>
+<th>Roll no</th>
+<th>Name</th>
+<th>Class</th>
+<th>Subject</th>
+<th>Marks</th>
+</tr>
+
+<tr>
+<td rowspan="3">101</td>
+<td rowspan="3">Ashish</td>
+<td rowspan="3">XII</td>
+<td>Physics</td>
+<td>78</td>
+</tr>
+
+<tr>
+<td>Chemistry</td>
+<td>95</td>
+</tr>
+
+<tr>
+<td>Biology</td>
+<td>87</td>
+</tr>
+
+</table>
+</div>
+
+<form class="p2-form">
+
+<fieldset>
+<legend>Registration Form</legend>
+
+<label>Name:</label>
+<input type="text" placeholder="Enter your Name">
+
+<br><br>
+
+<label>E-mail:</label>
+<input type="email" placeholder="Enter your E-mail">
+
+<br><br>
+
+<label>Gender:</label>
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+
+<br><br>
+
+<label>Subjects:</label><br>
+<input type="checkbox"> Physics
+<input type="checkbox"> Chemistry
+<input type="checkbox"> Maths
+<input type="checkbox"> Biology
+
+<br><br>
+
+<button type="submit">Submit</button>
+
+</fieldset>
+
+</form>
+
+</div>
+</section>
+
+<!-- PROJECT 3 -->
+<section id="project3" class="gallery-dashboard">
+<h2>Project 3</h2>
+<button class="btn" onclick="backToDashboard()">Back</button>
+<div class="p3-container">
+
+<form onsubmit="return validateForm()" onreset="clearOutput()">
+
+<fieldset>
+<legend>Registration form</legend>
+
+<label>Name:</label>
+<input id="name" type="text" placeholder="Enter your Name" required>
+
+<br><br>
+
+<label>E-mail:</label>
+<input id="email" type="email" placeholder="Enter your E-mail" required>
+
+<br><br>
+
+<label>Course:</label>
+<select>
+<option>O Level</option> 
+<option>CCC</option> 
+</select>
+
+<br><br>
+
+<label>Upload File</label>
+<input type="file">
+
+<br><br> 
+
+<input type="submit">
+<input type="reset">
+
+</fieldset>
+
+</form>
+
+<p id="output"></p>
+
+</div>
+</section>
+
 <!-- IMAGE VIEWER -->
 
 <div id="viewer" onclick="closeViewer()"
@@ -412,6 +817,61 @@ function closeViewer(){
 
 document.getElementById("viewer").style.display="none";
 
+}
+
+function openProject(name){
+
+document.getElementById("home").style.display="none";
+document.getElementById("dashboard").style.display="none";
+
+document.getElementById("ashish").style.display="none";
+document.getElementById("bhavna").style.display="none";
+document.getElementById("sona").style.display="none";
+document.getElementById("veerpal").style.display="none";
+document.getElementById("aksh").style.display="none";
+
+document.getElementById("project1").style.display="none";
+document.getElementById("project2").style.display="none";
+document.getElementById("project3").style.display="none";
+
+document.getElementById(name).style.display="block";
+
+window.scrollTo(0,0);
+}
+
+function validateForm(){
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+
+if(name==""){
+alert("Name is required");
+return false;
+}
+
+if(email==""){
+alert("Email is required");
+return false;
+}else{
+
+alert("Form Submitted");
+
+let students=["Ashish","Rahul"];
+students.push(name);
+
+let text="";
+for(let i=0; i<students.length; i++){
+text +=students[i]+"<br>";
+}
+
+document.getElementById("output").innerHTML=text;
+
+return false;
+}
+}
+
+function clearOutput(){
+document.getElementById("output").innerHTML="";
 }
 
 </script>
