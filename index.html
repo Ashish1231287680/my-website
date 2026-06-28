@@ -420,7 +420,7 @@ font-size:14px;
 
 <nav class="top-navbar">
   <div class="nav-scroll">
-  <a href="#" onclick="goHome()">Home</a>
+  <a href="#" onclick="goHome(); return false;">Home</a>
   <a href="#" onclick="openProject('project1')">Project 1</a>
   <a href="#" onclick="openProject('project2')">Project 2</a>
   <a href="#" onclick="openProject('project3')">Project 3</a> 
@@ -754,76 +754,7 @@ border-radius:20px;
 
 <script>
 
-function changeURL(page){
-history.pushState({page:page},"","#"+page);
-}
-
-function openDashboard(){
-
-document.getElementById("home").style.display="none";
-
-document.getElementById("dashboard").style.display="block";
-
-document.getElementById("ashish").style.display="none";
-document.getElementById("bhavna").style.display="none";
-document.getElementById("sona").style.display="none";
-document.getElementById("veerpal").style.display="none";
-document.getElementById("aksh").style.display="none";
-
-window.scrollTo(0,0);
-
-changeURL("dashboard");
-
-}
-
-function openCategory(name){
-
-document.getElementById("dashboard").style.display="none";
-
-document.getElementById("ashish").style.display="none";
-document.getElementById("bhavna").style.display="none";
-document.getElementById("sona").style.display="none";
-document.getElementById("veerpal").style.display="none";
-document.getElementById("aksh").style.display="none";
-
-document.getElementById(name).style.display="block";
-
-window.scrollTo(0,0);
-
-changeURL(name);
-  
-}
-
-function backToDashboard(){
-
-document.getElementById("dashboard").style.display="block";
-
-document.getElementById("ashish").style.display="none";
-document.getElementById("bhavna").style.display="none";
-document.getElementById("sona").style.display="none";
-document.getElementById("veerpal").style.display="none";
-document.getElementById("aksh").style.display="none";
-
-window.scrollTo(0,0);
-
-}
-
-function openViewer(src){
-
-document.getElementById("viewer").style.display="flex";
-
-document.getElementById("viewerImg").src=src;
-
-}
-
-function closeViewer(){
-
-document.getElementById("viewer").style.display="none";
-
-}
-
-function openProject(name){
-
+  function hideAll(){
 document.getElementById("home").style.display="none";
 document.getElementById("dashboard").style.display="none";
 
@@ -836,15 +767,56 @@ document.getElementById("aksh").style.display="none";
 document.getElementById("project1").style.display="none";
 document.getElementById("project2").style.display="none";
 document.getElementById("project3").style.display="none";
+}
 
-document.getElementById(name).style.display="block";
+function changeURL(page){
+history.pushState({page:page},"","#"+page);
+}
 
+function openDashboard(){
+hideAll();
+document.getElementById("dashboard").style.display="block";
+window.scrollTo(0,0);
+changeURL("dashboard");
+}
+
+function openCategory(name){
+hideAll();
+
+let el=document.getElementById(name);
+if(el) el.style.display="block";
+
+window.scrollTo(0,0);
 changeURL(name);
-  
+}
+
+function backToDashboard(){
+hideAll();
+document.getElementById("dashboard").style.display="block";
+window.scrollTo(0,0);
+changeURL("dashboard");
+}
+
+function openViewer(src){
+document.getElementById("viewer").style.display="flex";
+document.getElementById("viewerImg").src=src;
+}
+
+function closeViewer(){
+document.getElementById("viewer").style.display="none";
+}
+
+function openProject(name){
+hideAll();
+
+let el=document.getElementById(name);
+if(el) el.style.display="block";
+
+window.scrollTo(0,0);
+changeURL(name);
 }
 
 function validateForm(){
-
 let name=document.getElementById("name").value;
 let email=document.getElementById("email").value;
 
@@ -856,7 +828,7 @@ return false;
 if(email==""){
 alert("Email is required");
 return false;
-}else{
+}
 
 alert("Form Submitted");
 
@@ -872,37 +844,20 @@ document.getElementById("output").innerHTML=text;
 
 return false;
 }
-}
 
 function clearOutput(){
 document.getElementById("output").innerHTML="";
 }
 
 function goHome(){
-
+hideAll();
 document.getElementById("home").style.display="flex";
-
-document.getElementById("dashboard").style.display="none";
-
-document.getElementById("ashish").style.display="none";
-document.getElementById("bhavna").style.display="none";
-document.getElementById("sona").style.display="none";
-document.getElementById("veerpal").style.display="none";
-document.getElementById("aksh").style.display="none";
-
-document.getElementById("project1").style.display="none";
-document.getElementById("project2").style.display="none";
-document.getElementById("project3").style.display="none";
-
 window.scrollTo(0,0);
 changeURL("home");
-  
 }
 
 window.onpopstate=function(){
-
 goHome();
-
 }
   
 </script>
