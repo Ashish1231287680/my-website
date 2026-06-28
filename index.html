@@ -787,7 +787,8 @@ document.getElementById("aksh").style.display="none";
 document.getElementById(name).style.display="block";
 
 window.scrollTo(0,0);
-
+window.scrollTo(0,0);
+  
 }
 
 function backToDashboard(){
@@ -836,6 +837,9 @@ document.getElementById("project3").style.display="none";
 document.getElementById(name).style.display="block";
 
 window.scrollTo(0,0);
+changeURL("dashboard");
+changeURL(name);
+  
 }
 
 function validateForm(){
@@ -890,6 +894,13 @@ document.getElementById("project2").style.display="none";
 document.getElementById("project3").style.display="none";
 
 window.scrollTo(0,0);
+changeURL("home");
+  
+}
+
+window.onpopstate=function(){
+
+goHome();
 
 }
   
