@@ -754,6 +754,10 @@ border-radius:20px;
 
 <script>
 
+function changeURL(page){
+history.pushState({page:page},"","#"+page);
+}
+
 function openDashboard(){
 
 document.getElementById("home").style.display="none";
