@@ -772,6 +772,8 @@ document.getElementById("aksh").style.display="none";
 
 window.scrollTo(0,0);
 
+changeURL("dashboard");
+
 }
 
 function openCategory(name){
@@ -787,7 +789,8 @@ document.getElementById("aksh").style.display="none";
 document.getElementById(name).style.display="block";
 
 window.scrollTo(0,0);
-window.scrollTo(0,0);
+
+changeURL(name);
   
 }
 
@@ -836,8 +839,6 @@ document.getElementById("project3").style.display="none";
 
 document.getElementById(name).style.display="block";
 
-window.scrollTo(0,0);
-changeURL("dashboard");
 changeURL(name);
   
 }
