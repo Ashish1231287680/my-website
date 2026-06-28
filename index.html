@@ -754,49 +754,41 @@ border-radius:20px;
 
 <script>
 
-  function hideAll(){
-document.getElementById("home").style.display="none";
-document.getElementById("dashboard").style.display="none";
-
-document.getElementById("ashish").style.display="none";
-document.getElementById("bhavna").style.display="none";
-document.getElementById("sona").style.display="none";
-document.getElementById("veerpal").style.display="none";
-document.getElementById("aksh").style.display="none";
-
-document.getElementById("project1").style.display="none";
-document.getElementById("project2").style.display="none";
-document.getElementById("project3").style.display="none";
+function showOnly(id){
+document.querySelectorAll("section, .hero").forEach(el=>{
+el.style.display="none";
+});
+document.getElementById(id).style.display="flex";
+window.scrollTo(0,0);
+history.pushState({}, "", "#"+id);
 }
 
-function changeURL(page){
-history.pushState({page:page},"","#"+page);
+// HOME
+function goHome(){
+showOnly("home");
 }
 
+// DASHBOARD
 function openDashboard(){
-hideAll();
-document.getElementById("dashboard").style.display="block";
-window.scrollTo(0,0);
-changeURL("dashboard");
+showOnly("dashboard");
 }
 
-function openCategory(name){
-hideAll();
-
-let el=document.getElementById(name);
-if(el) el.style.display="block";
-
-window.scrollTo(0,0);
-changeURL(name);
+// CATEGORY
+function openCategory(id){
+showOnly(id);
 }
 
+// PROJECT
+function openProject(id){
+showOnly(id);
+}
+
+// BACK BUTTON (dashboard pe le aata hai)
 function backToDashboard(){
-hideAll();
-document.getElementById("dashboard").style.display="block";
-window.scrollTo(0,0);
-changeURL("dashboard");
+showOnly("dashboard");
 }
 
+// IMAGE VIEWER
 function openViewer(src){
 document.getElementById("viewer").style.display="flex";
 document.getElementById("viewerImg").src=src;
@@ -806,42 +798,17 @@ function closeViewer(){
 document.getElementById("viewer").style.display="none";
 }
 
-function openProject(name){
-hideAll();
-
-let el=document.getElementById(name);
-if(el) el.style.display="block";
-
-window.scrollTo(0,0);
-changeURL(name);
-}
-
+// FORM
 function validateForm(){
 let name=document.getElementById("name").value;
 let email=document.getElementById("email").value;
 
-if(name==""){
-alert("Name is required");
-return false;
-}
-
-if(email==""){
-alert("Email is required");
+if(!name || !email){
+alert("Name aur Email required hai");
 return false;
 }
 
 alert("Form Submitted");
-
-let students=["Ashish","Rahul"];
-students.push(name);
-
-let text="";
-for(let i=0; i<students.length; i++){
-text +=students[i]+"<br>";
-}
-
-document.getElementById("output").innerHTML=text;
-
 return false;
 }
 
@@ -849,17 +816,10 @@ function clearOutput(){
 document.getElementById("output").innerHTML="";
 }
 
-function goHome(){
-hideAll();
-document.getElementById("home").style.display="flex";
-window.scrollTo(0,0);
-changeURL("home");
-}
-
+// BACK BUTTON SUPPORT
 window.onpopstate=function(){
 goHome();
 }
-  
 </script>
 
 </body>
